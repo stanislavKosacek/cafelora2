@@ -242,6 +242,30 @@ nav a:hover {
   background-attachment: fixed;
 }
 
+.gallery > .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  backdrop-filter: blur(6px);
+}
+
+.gallery p {
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px black;
+  margin: 0;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+.gallery p::first-letter {
+  font-family: 'Great Vibes', fantasy;
+  font-weight: 400;
+  font-size: 3rem;
+}
+
 .contacts {
   margin-bottom: 4rem;
 
@@ -294,5 +318,9 @@ nav a:hover {
     padding-top: 4rem;
 
     text-align: center;
+  }
+
+  .nav-btn {
+    display: none;
   }
 }
