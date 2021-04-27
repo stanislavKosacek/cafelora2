@@ -2,6 +2,21 @@ import { Layer } from './Layer/index';
 
 import './style.css';
 
+const layers = [
+  {
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  },
+  {
+    color: '#fed7b0',
+    label: 'teplé mléko',
+  },
+  {
+    color: '#613916',
+    label: 'espresso',
+  },
+];
+
 const navElm = document.querySelector('nav');
 document.querySelector('#nav-btn').addEventListener('click', () => {
   navElm.classList.toggle('nav-closed');
@@ -32,17 +47,9 @@ orderBtn.addEventListener('click', () => {
 
 const drinkInfoElm = document.querySelector('.drink__info');
 
-drinkInfoElm.innerHTML += Layer({
-  color: '#feeeca',
-  label: 'mléčná pěna',
+let layersHtml = '';
+layers.forEach((layer) => {
+  layersHtml += Layer(layer);
 });
 
-drinkInfoElm.innerHTML += Layer({
-  color: '#fed7b0',
-  label: 'teplé mléko',
-});
-
-drinkInfoElm.innerHTML += Layer({
-  color: '#613916',
-  label: 'espresso',
-});
+drinkInfoElm.innerHTML += layersHtml;
