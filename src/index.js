@@ -1,3 +1,5 @@
+import { Layer } from './Layer/index';
+
 import './style.css';
 
 const navElm = document.querySelector('nav');
@@ -26,4 +28,21 @@ orderBtn.addEventListener('click', () => {
     drinkCupElm.classList.add('drink__cup--selected');
     orderBtn.textContent = 'Zrušit';
   }
+});
+
+const drinkInfoElm = document.querySelector('.drink__info');
+
+drinkInfoElm.innerHTML += Layer({
+  color: '#feeeca',
+  label: 'mléčná pěna',
+});
+
+drinkInfoElm.innerHTML += Layer({
+  color: '#fed7b0',
+  label: 'teplé mléko',
+});
+
+drinkInfoElm.innerHTML += Layer({
+  color: '#613916',
+  label: 'espresso',
 });
