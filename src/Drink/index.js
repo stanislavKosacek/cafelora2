@@ -33,7 +33,6 @@ export const Drink = (props) => {
 
   orderBtn.addEventListener('click', () => {
     const drinkCupElm = drinkElm.querySelector('.drink__cup');
-    props.ordered = !props.ordered;
     if (props.ordered) {
       drinkCupElm.classList.remove('drink__cup--selected');
       orderBtn.textContent = 'Objednat';
@@ -41,6 +40,7 @@ export const Drink = (props) => {
       drinkCupElm.classList.add('drink__cup--selected');
       orderBtn.textContent = 'Zrušit';
     }
+    props.ordered = !props.ordered;
   });
 
   return drinkElm;
